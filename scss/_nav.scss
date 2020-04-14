@@ -11,7 +11,9 @@
   list-style: none;
 }
 
-.nav-link {
+.nav-link,
+a.lev1,
+span.lev1 {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
   text-decoration: if($link-decoration == none, null, none);

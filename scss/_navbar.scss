@@ -71,14 +71,16 @@
 //
 // Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
 
-.navbar-nav {
+.navbar-nav,
+.navbar-nav ul.lev1 {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 
-  .nav-link {
+  .nav-link,
+  a.lev1 {
     padding-right: 0;
     padding-left: 0;
   }
@@ -159,14 +161,17 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
 
-        .navbar-nav {
+        .navbar-nav,
+        .navbar-nav ul.lev1 {
           flex-direction: row;
 
           .dropdown-menu {
             position: absolute;
           }
 
-          .nav-link {
+          .nav-link,
+          a.lev1,
+          span.lev1 {
             padding-right: $navbar-nav-link-padding-x;
             padding-left: $navbar-nav-link-padding-x;
           }
@@ -200,8 +205,10 @@
     }
   }
 
-  .navbar-nav {
-    .nav-link {
+  .navbar-nav,
+  .navbar-nav ul.lev1 {
+    .nav-link,
+    a.lev1 {
       color: $navbar-light-color;
 
       &:hover,
@@ -214,8 +221,18 @@
       }
     }
 
+    span.lev1 {
+      color: $navbar-light-color;
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
     .show > .nav-link,
     .active > .nav-link,
+    .cur > a.lev1,
+    .cur > span.lev1,
     .nav-link.show,
     .nav-link.active {
       color: $navbar-light-active-color;
@@ -253,8 +270,10 @@
     }
   }
 
-  .navbar-nav {
-    .nav-link {
+  .navbar-nav,
+  .navbar-nav ul.lev1 {
+    .nav-link,
+    a.lev1 {
       color: $navbar-dark-color;
 
       &:hover,
@@ -267,8 +286,18 @@
       }
     }
 
+    span.lev1 {
+      color: $navbar-light-color;
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
     .show > .nav-link,
     .active > .nav-link,
+    .cur > a.lev1,
+    .cur > span.lev1,
     .nav-link.show,
     .nav-link.active {
       color: $navbar-dark-active-color;
