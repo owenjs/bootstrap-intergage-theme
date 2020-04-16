@@ -57,11 +57,21 @@
   .btn-#{$color} {
     @include button-variant($value, $value);
   }
+  // Extend .btn For RTE Buttons
+  .rte-btn-#{$color} {
+    @extend .btn;
+    @extend .btn-#{$color};
+  }
 }
 
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
     @include button-outline-variant($value);
+  }
+  // Extend .btn For RTE Buttons
+  .rte-btn-outline-#{$color} {
+    @extend .btn;
+    @extend .btn-outline-#{$color};
   }
 }
 

@@ -23,7 +23,7 @@ span.par {
 
 // The dropdown menu
 .dropdown-menu,
-ul:not([class*="lev1"]) {
+.navbar-nav ul:not([class*="lev1"]) {
   position: absolute;
   top: 100%;
   left: 0;

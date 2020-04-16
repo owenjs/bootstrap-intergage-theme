@@ -382,6 +382,7 @@ $utilities: map-merge(
     "color": (
       property: color,
       class: text,
+      suffixSelectors: ('> a'), // For Rich Text Editors
       values: map-merge(
         $theme-colors,
         (
