@@ -44,6 +44,20 @@
           #{$property}: $value if($enable-important-utilities, !important, null);
         }
       }
+
+      @if map-has-key($utility, suffixSelectors) {
+        $suffix-selectors: map-get($utility, suffixSelectors);
+        
+        @each $suffix in $suffix-selectors {
+          .#{$property-class + $infix + $property-class-modifier} #{$suffix} {
+            @each $property in $properties {
+              #{$property}: $value if($enable-important-utilities, !important, null);
+            }
+          }
+        }
+
+      }
+
     }
   }
 }
