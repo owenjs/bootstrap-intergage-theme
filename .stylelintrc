@@ -17,6 +17,16 @@
       {
         "ignore": "local"
       }
-    ]
+    ],
+
+
+    "selector-no-qualifying-type": [
+      true, 
+      {
+        ignore: ["attribute", "class", "id"]
+      }
+    ],
+    "selector-max-class": 5,
+    "selector-max-compound-selectors": 5
   }
 }

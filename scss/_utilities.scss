@@ -142,6 +142,7 @@ $utilities: map-merge(
       responsive: true,
       property: flex-direction,
       class: flex,
+      suffixClass: 'Yes', // For Checkbox Options in Templated Page Items
       values: row column row-reverse column-reverse
     ),
     "flex-grow": (

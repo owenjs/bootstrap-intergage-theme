@@ -2,6 +2,24 @@
 // Base styles
 //
 
+.c2form_fieldset .c2form_fields {
+  @include make-row();
+}
+
+.c2form_row {
+  @include make-col-ready();
+  margin-bottom: $form-row-margin-bottom;
+}
+
+.bffsfield {
+  display: none;
+}
+
+.c2form_date {
+  display: flex;
+  align-items: center;
+}
+
 .input-group {
   position: relative;
   display: flex;

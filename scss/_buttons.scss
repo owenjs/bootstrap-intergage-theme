@@ -61,6 +61,14 @@
   .rte-btn-#{$color} {
     @extend .btn;
     @extend .btn-#{$color};
+    // For a tag in Spans, generated when using the Rich Text Editor
+    > a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -72,6 +80,14 @@
   .rte-btn-outline-#{$color} {
     @extend .btn;
     @extend .btn-outline-#{$color};
+    // For a tag in Spans, generated when using the Rich Text Editor
+    > a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 

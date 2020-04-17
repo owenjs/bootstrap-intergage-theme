@@ -12,6 +12,32 @@
   }
 }
 
+// cke_editable Rows
+//
+// Make the whole body of the CMS rich text editor a bootstrap "row"
+// So Column logic logic applies (if any)
+.cke_editable {
+  @include make-row();
+
+  // Make all Componets inside a col-12, include those p tags!
+  > * {
+    @include make-col-ready();
+  }
+}
+
+// epi within rows
+//
+// The CMS wraps Page Items in divs so it can target them on hover
+// We need to make these a bootstrap "row", so columns inside still
+// behave in the same way
+*[id^="epi"] { // Let's Hope epi isn't used anywhere else...
+  @include make-row();
+
+  > * {
+    @include make-col-ready();
+  }
+}
+
 
 // Columns
 //

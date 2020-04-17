@@ -2,7 +2,12 @@
 // Textual form controls
 //
 
-.form-control {
+.form-control,
+.c2form_input input[type="tel"],
+.c2form_input input[type="email"],
+.c2form_input input[type="text"],
+.c2form_input textarea,
+.c2form_input select {
   display: block;
   width: 100%;
   min-height: $input-height;

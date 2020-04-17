@@ -45,17 +45,27 @@
         }
       }
 
+      // SuffixSelectors - A Selector after the inital Selector
       @if map-has-key($utility, suffixSelectors) {
         $suffix-selectors: map-get($utility, suffixSelectors);
         
         @each $suffix in $suffix-selectors {
           .#{$property-class + $infix + $property-class-modifier} #{$suffix} {
-            @each $property in $properties {
-              #{$property}: $value if($enable-important-utilities, !important, null);
-            }
+            @extend .#{$property-class + $infix + $property-class-modifier};
           }
         }
 
+      }
+
+      // suffixClass - A suffix added to the base Class
+      @if map-has-key($utility, suffixClass) {
+        $suffix-class: map-get($utility, suffixClass);
+
+        @each $suffix in $suffix-class {
+          .#{$property-class + $infix + $property-class-modifier + $suffix} {
+            @extend .#{$property-class + $infix + $property-class-modifier};
+          }
+        }
       }
 
     }

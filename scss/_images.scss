@@ -9,6 +9,11 @@
   @include img-fluid();
 }
 
+// Well I Just added it back - OE 2020
+img {
+  @include img-fluid();
+}
+
 
 // Image thumbnails
 .img-thumbnail {
@@ -21,6 +26,26 @@
   // Keep them at most 100% wide
   @include img-fluid();
 }
+
+// scss-docs-start responsive-breakpoints
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .img#{$infix}-object-fit {
+      position: relative;
+      > img {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: calc(var(--grid-gutter-x) / 2); // stylelint-disable-line function-blacklist;
+        height: 100%;
+        width: subtract(100%, var(--grid-gutter-x));
+      }
+    }
+  }
+}
+// scss-docs-end responsive-breakpoints
 
 //
 // Figures

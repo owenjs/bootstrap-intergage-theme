@@ -2,7 +2,8 @@
 // Labels
 //
 
-.form-label {
+.form-label,
+.c2form_fldname {
   margin-bottom: $form-label-margin-bottom;
   @include font-size($form-label-font-size);
   font-style: $form-label-font-style;
