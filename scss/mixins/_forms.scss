@@ -14,7 +14,8 @@
 }
 
 @mixin form-validation-state($state, $color, $icon) {
-  .#{$state}-feedback {
+  .#{$state}-feedback,
+  #{if($state == "invalid", ".FormFieldErrorText", "")} { // CMS Invalid Text Class Name
     display: none;
     width: 100%;
     margin-top: $form-feedback-margin-top;
@@ -44,6 +45,14 @@
     }
   }
 
+  @if ($state == "invalid") {
+    // CMS Invalid Class Wrapper
+    .c2form_flderror_input ~ .FormFieldErrorText {
+      display: block;
+    }  
+  }
+
+  
   .form-control {
     @include form-validation-state-selector($state) {
       border-color: $color;

@@ -16,6 +16,22 @@
   z-index: $zindex-fixed;
 }
 
+.absolute-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-absolute;
+}
+
+.absolute-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-absolute;
+}
+
 // Responsive sticky top
 @supports (position: sticky) {
   @each $breakpoint in map-keys($grid-breakpoints) {
