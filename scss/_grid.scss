@@ -25,17 +25,35 @@
   }
 }
 
-// epi within rows
+// c2pgitm_wrap within rows
 //
 // The CMS wraps Page Items in divs so it can target them on hover
 // We need to make these a bootstrap "row", so columns inside still
 // behave in the same way
-*[id^="epi"] { // Let's Hope epi isn't used anywhere else...
+// 
+// Attribute Selector used so css hierarchy is not interfered with
+*[class*="c2pgitm_wrap"] {
   @include make-row();
+
+  // If this CMS Wrapper is within a row, remove aligment
+  .row > & {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   > * {
     @include make-col-ready();
+    // Remove Aligment
+    .row > &.row {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
+  
 }
 
 

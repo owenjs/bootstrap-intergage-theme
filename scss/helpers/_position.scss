@@ -6,6 +6,10 @@
   right: 0;
   left: 0;
   z-index: $zindex-fixed;
+  // CMS Wrapper Div Hovers
+  &.c2etihook:hover {
+    position: fixed;
+  }
 }
 
 .fixed-bottom {
@@ -14,6 +18,10 @@
   bottom: 0;
   left: 0;
   z-index: $zindex-fixed;
+  // CMS Wrapper Div Hovers
+  &.c2etihook:hover {
+    position: fixed;
+  }
 }
 
 .absolute-top {
@@ -22,6 +30,10 @@
   right: 0;
   left: 0;
   z-index: $zindex-absolute;
+  // CMS Wrapper Div Hovers
+  &.c2etihook:hover {
+    position: absolute;
+  }
 }
 
 .absolute-bottom {
@@ -30,6 +42,10 @@
   bottom: 0;
   left: 0;
   z-index: $zindex-absolute;
+  // CMS Wrapper Div Hovers
+  &.c2etihook:hover {
+    position: absolute;
+  }
 }
 
 // Responsive sticky top
@@ -42,6 +58,10 @@
         position: sticky;
         top: 0;
         z-index: $zindex-sticky;
+        // CMS Wrapper Div Hovers
+        &.c2etihook:hover {
+          position: sticky;
+        }
       }
     }
   }

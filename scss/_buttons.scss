@@ -96,8 +96,22 @@
 // Link buttons
 //
 
+// All in one for Rich Text Editors
+.rte-btn-link {
+  @extend .btn;
+  // For a tag in Spans, generated when using the Rich Text Editor
+  > a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 // Make a button look and behave like a link
-.btn-link {
+.btn-link,
+.rte-btn-link {
   font-weight: $font-weight-normal;
   color: $btn-link-color;
   text-decoration: $link-decoration;

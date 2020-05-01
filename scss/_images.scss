@@ -9,7 +9,7 @@
   @include img-fluid();
 }
 
-// Well I Just added it back - OE 2020
+// Well, I just added it back - OE 2020
 img {
   @include img-fluid();
 }
@@ -32,15 +32,33 @@ img {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .img#{$infix}-object-fit {
+    .img#{$infix}-object-fit-cover,
+    #{if($infix == "", ".img-na-object-fit-cover", "")},
+    .img#{$infix}-object-fit-contain,
+    #{if($infix == "", ".img-na-object-fit-contain", "")} {
       position: relative;
       > img {
         position: absolute;
-        object-fit: cover;
         top: 0;
         left: calc(var(--grid-gutter-x) / 2); // stylelint-disable-line function-blacklist;
         height: 100%;
         width: subtract(100%, var(--grid-gutter-x));
+      }
+    }
+
+    // Cover
+    .img#{$infix}-object-fit-cover,
+    #{if($infix == "", ".img-na-object-fit-cover", "")} {
+      > img {
+        object-fit: cover;
+      }
+    }
+
+    // Contain
+    .img#{$infix}-object-fit-contain,
+    #{if($infix == "", ".img-na-object-fit-contain", "")} {
+      > img {
+        object-fit: contain;
       }
     }
   }
@@ -56,7 +74,8 @@ img {
   display: inline-block;
 }
 
-.figure-img {
+.figure-img,
+.c2figure img {
   margin-bottom: $spacer / 2;
   line-height: 1;
 }
@@ -64,4 +83,10 @@ img {
 .figure-caption {
   @include font-size($figure-caption-font-size);
   color: $figure-caption-color;
+}
+
+.c2figure-caption > p {
+  // As Template Page Item, Image, has the Caption as Rich Text
+  // The Text will be wrapped in p tags
+  margin-bottom: 0;
 }
