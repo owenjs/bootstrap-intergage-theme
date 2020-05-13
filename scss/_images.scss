@@ -61,9 +61,66 @@ img {
         object-fit: contain;
       }
     }
+
   }
 }
 // scss-docs-end responsive-breakpoints
+
+// Position Top
+.img-object-fit-center-top {
+  > img {
+    object-position: top;
+  }
+}
+
+// Position Bottom
+.img-object-fit-center-bottom {
+  > img {
+    object-position: bottom;
+  }
+}
+
+// Position Left
+.img-object-fit-left-center {
+  > img {
+    object-position: left;
+  }
+}
+
+// Position Right
+.img-object-fit-right-center {
+  > img {
+    object-position: right;
+  }
+}
+
+// Position Left Top
+.img-object-fit-left-top {
+  > img {
+    object-position: left top;
+  }
+}
+
+// Position Right Top
+.img-object-fit-right-top {
+  > img {
+    object-position: right top;
+  }
+}
+
+// Position Left Bottom
+.img-object-fit-center-left-bottom {
+  > img {
+    object-position: left bottom;
+  }
+}
+
+// Position Right Bottom
+.img-object-fit-right-bottom {
+  > img {
+    object-position: right bottom;
+  }
+}
 
 //
 // Figures
