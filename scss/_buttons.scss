@@ -134,6 +134,16 @@
   // No need for an active state here
 }
 
+// 
+// CMS Form Reset Button
+// 
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color}.c2btnreset {
+    background-color: transparent;
+    @extend .btn-outline-#{$color};
+  }
+}
 
 //
 // Button Sizes
