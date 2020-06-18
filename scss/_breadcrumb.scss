@@ -1,4 +1,4 @@
-.breadcrumb {
+.breadcrumb, .LocatorContainer {
   display: flex;
   flex-wrap: wrap;
   padding: $breadcrumb-padding-y $breadcrumb-padding-x;
@@ -25,6 +25,21 @@
   }
 
   &.active {
+    color: $breadcrumb-active-color;
+  }
+}
+
+.LocatorText {
+  display: flex;
+  + .LocatorSeparator {
+    padding-left: $breadcrumb-item-padding-x / 2;
+    + .LocatorText {
+      padding-left: $breadcrumb-item-padding-x / 2;
+    }
+  }
+  
+  // Active State
+  &:last-child {
     color: $breadcrumb-active-color;
   }
 }

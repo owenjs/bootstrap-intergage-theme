@@ -33,7 +33,7 @@ img {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     .img#{$infix}-object-fit-cover,
-    #{if($infix == "", ".img-na-object-fit-cover", "")},
+    #{if($infix == "", ".img-na-object-fit-cover", "")}, // 'na' For Single Select Attributes
     .img#{$infix}-object-fit-contain,
     #{if($infix == "", ".img-na-object-fit-contain", "")} {
       position: relative;
@@ -65,6 +65,11 @@ img {
   }
 }
 // scss-docs-end responsive-breakpoints
+
+.img-object-fit-p-0 > img {
+  left: 0;
+  width: 100%;
+}
 
 // Position Top
 .img-object-fit-center-top {

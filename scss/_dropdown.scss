@@ -16,14 +16,14 @@ span.par {
   @include caret();
   // Rotate caret on Dropdown Sub Menus
   .dropdown-submenu &::after,
-  li.par:not([class*="lev1"]) &::after {
+  .navbar-nav:not(.mm-spn) li.par:not([class*="lev1"]) &::after {
     transform: rotate(-90deg);
   }
 }
 
 // The dropdown menu
 .dropdown-menu,
-.navbar-nav ul:not([class*="lev1"]) {
+.navbar-nav:not(.mm-spn) ul:not([class*="lev1"]) {
   position: absolute;
   top: 100%;
   left: 0;
@@ -59,14 +59,14 @@ span.par {
     }
   }
 }
-ul:not([class*="lev1"]) {
+.navbar-nav:not(.mm-spn) ul:not([class*="lev1"]) {
   margin: 0;
 }
 // scss-docs-end responsive-breakpoints
 
 // Dropdown Sub Menus
 .dropdown-submenu,
-li.par:not([class*="lev1"]) {
+.navbar-nav:not(.mm-spn) li.par:not([class*="lev1"]) {
   position: relative;
   > .dropdown-menu,
   > ul {
@@ -148,8 +148,8 @@ li.par:not([class*="lev1"]) {
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
 .dropdown-item,
-ul a.child,
-ul a.par:not([class*="lev1"]) {
+.navbar-nav:not(.mm-spn) ul a.child,
+.navbar-nav:not(.mm-spn) ul a.par:not([class*="lev1"]) {
   display: block;
   width: 100%; // For `<button>`s
   padding: $dropdown-item-padding-y $dropdown-item-padding-x;

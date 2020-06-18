@@ -71,7 +71,7 @@
 //
 // Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
 
-.navbar-nav,
+.navbar-nav:not(.mm-spn),
 .navbar-nav:not(.mm-spn) ul.lev1 {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
@@ -235,6 +235,8 @@
     .active > .nav-link,
     .cur > a.lev1,
     .cur > span.lev1,
+    .poc > a.lev1,
+    .poc > span.lev1,
     .nav-link.show,
     .nav-link.active {
       color: $navbar-light-active-color;

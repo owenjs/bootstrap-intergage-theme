@@ -83,6 +83,7 @@ $utilities: map-merge(
     "width": (
       property: width,
       class: w,
+      responsive: true, // For CMS Forms
       values: (
         25: 25%,
         50: 50%,
@@ -109,6 +110,7 @@ $utilities: map-merge(
     "height": (
       property: height,
       class: h,
+      responsive: true,
       values: (
         25: 25%,
         50: 50%,

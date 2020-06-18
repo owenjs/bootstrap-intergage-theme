@@ -12,11 +12,12 @@
 }
 
 .nav-link,
-a.lev1,
-span.lev1 {
+.navbar-nav:not(.mm-spn) a.lev1,
+.navbar-nav:not(.mm-spn) span.lev1 {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
   text-decoration: if($link-decoration == none, null, none);
+  text-transform: $nav-link-text-transform;
   @include transition($nav-link-transition);
 
   &:hover,

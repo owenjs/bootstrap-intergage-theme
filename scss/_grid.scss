@@ -35,15 +35,26 @@
 *[class*="c2pgitm_wrap"] {
   @include make-row();
 
-  // If this CMS Wrapper is within a row, remove aligment
-  .row > & {
+  // If this CMS Wrapper is within a row or
+  // If this CMS Wrapper is within another CMS Wrapper or
+  // If the next element is a row, remove aligment
+  .row > &,
+  & > &,
+  > .row {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }
 
-  > * {
+  // If this CMS Wrapper is within another CMS Wrapper Make width 100%
+  // By this point we are more than likely 3 levels deep in Flexbox containers,
+  // At a certain point flexboxes lose its width so we need to reset it
+  & > & {
+    width: 100%;
+  }
+
+  > *:not([class*="c2pgitm_wrap"]) {
     @include make-col-ready();
     // Remove Aligment
     .row > &.row {

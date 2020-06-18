@@ -9,10 +9,19 @@
 .c2form_row {
   @include make-col-ready();
   margin-bottom: $form-row-margin-bottom;
+  display: flex;
+  flex-direction: column;
+}
+
+.c2form_fldhlp {
+  @extend .form-text;
+  @extend .text-muted;
+  @extend .small;
+  order: 6;
 }
 
 .bffsfield {
-  display: none;
+  @include sr-only(); // Hide
 }
 
 .c2form_date {
