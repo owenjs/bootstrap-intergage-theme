@@ -50,6 +50,19 @@ body {
   -webkit-tap-highlight-color: rgba($black, 0); // 4
 }
 
+// Web Font Script
+// 
+// If we are fetching the Font Dynamically
+// We must make all the text hidden until they're loaded, or if the request times out
+
+@if $var-font-family or $var-heading-font-family {
+  html.wf-loading {
+    h1, h2, h3, h4, h5, h6, p, pre, blockquote, li, dd, span, label, button, a {
+      visibility: hidden;
+    }
+  }
+}
+
 
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline
 // on elements that programmatically receive focus but wouldn't normally show a visible

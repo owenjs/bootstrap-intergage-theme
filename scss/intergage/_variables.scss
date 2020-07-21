@@ -58,14 +58,14 @@ $colors: (
   "gray-dark":  $gray-800
 ) !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$primary:       $col-Primary !default;
+$secondary:     $col-Secondary !default;
+$success:       $col-Success !default;
+$info:          $col-Info !default;
+$warning:       $col-Warning !default;
+$danger:        $col-Danger !default;
+$light:         $col-Light !default;
+$dark:          $col-Dark !default;
 
 $theme-colors: (
   "primary":    $primary,
@@ -240,7 +240,7 @@ $negative-spacers: negativify-map($spacers) !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
+$body-bg:                   $col-Body !default;
 $body-color:                $gray-900 !default;
 $body-text-align:           null !default;
 
@@ -375,7 +375,9 @@ $embed-responsive-aspect-ratios: (
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            var(--font-family-sans-serif) !default;
+
+// Determin the Font Family Base, using CMS Base Vaules
+$font-family-base:            if($var-font-family, var(--font-family-base-value), var(--font-family-sans-serif)) !default;
 // stylelint-enable value-keyword-case
 
 // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
@@ -405,7 +407,7 @@ $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
-$headings-font-family:        null !default;
+$headings-font-family:        if($var-heading-font-family, var(--font-family-heading), null) !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
@@ -1242,6 +1244,12 @@ $kbd-color:                         $white !default;
 $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
+
+
+// Tint Covers
+
+$tint-cover-colour: $black !default;
+$tint-cover-opacity: .3 !default;
 
 
 // Intergage Variables
