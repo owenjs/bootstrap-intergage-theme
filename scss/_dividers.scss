@@ -20,12 +20,14 @@ hr.dotted {
 
 hr.hr-text {
   position: relative;
+  overflow: visible;
 
   &::before {
     content: attr(data-content);
     display: inline-block;
     background: $body-bg;
     padding: 0 $hr-margin-y; // Used for X in this case
+    font-weight: $font-weight-bold;
 
     position: absolute;
     top: 50%;
