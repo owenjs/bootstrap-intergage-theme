@@ -803,6 +803,9 @@ $form-feedback-font-size:           $small-font-size !default;
 $form-feedback-valid-color:         $success !default;
 $form-feedback-invalid-color:       $danger !default;
 
+$form-feedback-required-marker-color:       $form-feedback-invalid-color !default;
+$form-feedback-required-marker-margin-left: map-get($spacers, 1) !default;
+
 $form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
 $form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>") !default;
 $form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
@@ -1268,8 +1271,17 @@ $pre-color:                         null !default;
 
 // Tint Covers
 
-$tint-cover-colour: $black !default;
-$tint-cover-opacity: .3 !default;
+$tint-cover-colour:                 $black !default;
+$tint-cover-opacity:                .3 !default;
+
+
+// Text Accent Strips
+
+$accent-strips-margin-bottom:       1.4em !default;
+$accent-strips-colour:              get('primary', $theme-colors) !default;
+$accent-strips-height:              4px !default;
+$accent-strips-width:               30% !default;
+$accent-strips-min-width:           150px !default;
 
 
 // Intergage Variables

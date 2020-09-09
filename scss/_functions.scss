@@ -53,6 +53,73 @@
   @return $result;
 }
 
+/** deep-map-get - Function to fetch deeply nested values from a given map
+ * @param map {map}: The map we are fetching from
+ * @param keys {array}: The key chain
+ * @return {*}: The found value
+*/
+@function deep-map-get($map, $keys...) {
+  @if type-of($map) != "map" {
+    @error 'Not a Map';
+  }
+
+  @each $key in $keys {
+    $map: map-get($map, $key);
+    @if $map == null {
+      @return null;
+    }
+  }
+  @return $map;
+}
+
+/** 
+ * split-str - Split a string be a given char
+ * @param {string} string: The string being split
+ * @param {char} separator: The separating character
+ * @return {array} split-arr: An array of the split up words
+ */
+ @function split-str($string, $separator: "") {
+  $split-arr: ();
+
+  // If no Separator was given, split every character
+  @if str-length($separator) == 0 {
+    @for $i from 1 through str-length($string) {
+      $split-arr: append($split-arr, str-slice($string, $i, $i));
+    }
+    // Return this array
+    @return $split-arr;
+  }
+
+  // Find the first index of separator in string
+  $index: str-index($string, $separator);
+  // Loop through string until no more separators are found
+  @while $index != null {
+    // Get the substring from the first character to the separator
+    $item: str-slice($string, 1, ($index - 1));
+    // Push item to array
+    $split-arr: append($split-arr, $item);
+    // Remove item and separator from string
+    $string: str-slice($string, ($index + str-length($separator)));
+    // Find new index of separator
+    $index: str-index($string, $separator);
+  }
+  // Add the remaining string to list (the last item) and return
+  @return append($split-arr, $string);
+}
+
+/** 
+ * get - Fetches deeply nested values based on the key given
+ * @param {string} key: The key being used in the fetch
+ * @param {map} map: The map being fetched from
+ * @return {*}: The found value or values
+ */
+ @function get($key, $map) {
+  // Split the key up
+  $keys: split-str($key, ".");
+  // Return the deep fetch
+  @return deep-map-get($map, $keys...);
+}
+
 // Replace `$search` with `$replace` in `$string`
 // Used on our SVG icon backgrounds for custom forms.
 //

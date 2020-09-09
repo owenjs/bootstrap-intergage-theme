@@ -33,7 +33,10 @@
 // 
 // Attribute Selector used so css hierarchy is not interfered with
 *[class*="c2pgitm_wrap"] {
-  @include make-row();
+  @include make-row((
+    'reset-gutter': false,
+    'negative-top': false
+  ));
 
   // If this CMS Wrapper is within a row or
   // If this CMS Wrapper is within another CMS Wrapper or
@@ -55,7 +58,7 @@
   }
 
   > *:not([class*="c2pgitm_wrap"]) {
-    @include make-col-ready();
+    @include make-col-ready(('margin-top': false));
     // Remove Aligment
     .row > &.row {
       margin-left: 0;

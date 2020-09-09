@@ -110,7 +110,9 @@
   }
 }
 
-.form-check-label {
+.form-check-label,
+.c2form_radio label,
+.c2form_code label {
   color: $form-check-label-color;
   cursor: $form-check-label-cursor;
 }

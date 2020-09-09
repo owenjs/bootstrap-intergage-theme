@@ -10,3 +10,13 @@
   @include form-validation-state($state, map-get($data, color), map-get($data, icon));
 }
 // scss-docs-end form-validation-states-loop
+
+// CMS Required Marker
+.FormFieldReqMarker {
+  color: $form-feedback-required-marker-color;
+  margin-left: $form-feedback-required-marker-margin-left;
+}
+
+.c2form_reqfields {
+  display: none;
+}

@@ -3,7 +3,8 @@
 // Replaces the browser default select with a custom one, mostly pulled from
 // https://primer.github.io/.
 
-.form-select {
+.form-select,
+.c2form_input select {
   display: block;
   width: 100%;
   height: $form-select-height;

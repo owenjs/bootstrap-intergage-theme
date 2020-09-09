@@ -4,6 +4,10 @@
 
 .c2form_fieldset .c2form_fields {
   @include make-row();
+  > *:not(.c2form_row) {
+    // Anything else in the fields, for example Marketing Consent Text
+    @include make-col-ready();
+  }
 }
 
 .c2form_row {

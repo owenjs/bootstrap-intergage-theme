@@ -7,8 +7,7 @@
 .c2form_input input[type="email"],
 .c2form_input input[type="text"],
 .c2form_input input[type="password"],
-.c2form_input textarea,
-.c2form_input select {
+.c2form_input textarea {
   display: block;
   width: 100%;
   min-height: $input-height;
@@ -94,14 +93,22 @@
 //
 // Repeated in `_input_group.scss` to avoid Sass extend issues.
 
-.form-control-sm {
+.form-control-sm,
+.c2form_row-sm input[type="tel"],
+.c2form_row-sm input[type="email"],
+.c2form_row-sm input[type="text"],
+.c2form_row-sm input[type="password"] {
   min-height: $input-height-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
   @include font-size($input-font-size-sm);
   @include border-radius($input-border-radius-sm);
 }
 
-.form-control-lg {
+.form-control-lg,
+.c2form_row-lg input[type="tel"],
+.c2form_row-lg input[type="email"],
+.c2form_row-lg input[type="text"],
+.c2form_row-lg input[type="password"] {
   min-height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
