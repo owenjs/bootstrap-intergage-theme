@@ -21,6 +21,8 @@
   <a href="https://blog.getbootstrap.com/">Blog</a>
 </p>
 
+## NOTE: No Longer used for Intergage Bootstrap Theme, please use [Intergage Launch Pad](https://github.com/owenjs/intergage-launch-pad)
+
 
 ## Table of contents
 
