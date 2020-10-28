@@ -174,8 +174,7 @@
       }
 
       this.setElementContent(SelectorEngine.findOne(SELECTOR_CONTENT, tip), content);
-      tip.classList.remove(CLASS_NAME_FADE);
-      tip.classList.remove(CLASS_NAME_SHOW);
+      tip.classList.remove(CLASS_NAME_FADE, CLASS_NAME_SHOW);
     };
 
     _proto._addAttachmentClass = function _addAttachmentClass(attachment) {

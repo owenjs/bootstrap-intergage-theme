@@ -217,6 +217,12 @@ $enable-validation-icons:                     true !default;
 $enable-deprecation-messages:                 true !default;
 $enable-important-utilities:                  true !default;
 
+// CMS Options
+//
+// Configuration settings for the CMS.
+
+$cms-base-product: 'Pro'; // Can be Light, Pro, Ecom
+
 
 // Spacing
 //

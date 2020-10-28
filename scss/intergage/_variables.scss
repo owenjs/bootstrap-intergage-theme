@@ -220,10 +220,9 @@ $enable-important-utilities:                  true !default;
 
 // CMS Options
 //
-// Configuration settings for the CMS. Is the Site using a Wish List, for example
-// Make sure to turn off unused settings to reduce size of CSS file
+// Configuration settings for the CMS.
 
-// TBD
+$cms-base-product: 'Pro'; // Can be Light, Pro, Ecom
 
 
 // Spacing

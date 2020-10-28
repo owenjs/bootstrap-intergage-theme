@@ -65,6 +65,17 @@
           .#{$property-class + $infix + $property-class-modifier + $suffix} {
             @extend .#{$property-class + $infix + $property-class-modifier};
           }
+
+          // If there are Suffix Selectors, include those too
+          @if map-has-key($utility, suffixSelectors) {
+            $suffix-selectors: map-get($utility, suffixSelectors);
+
+            @each $suffix-selector in $suffix-selectors {
+              .#{$property-class + $infix + $property-class-modifier + $suffix} #{$suffix-selector} {
+                @extend .#{$property-class + $infix + $property-class-modifier};
+              }
+            }
+          }
         }
       }
 

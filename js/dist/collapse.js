@@ -358,9 +358,7 @@
       var complete = function complete() {
         _this._element.classList.remove(CLASS_NAME_COLLAPSING);
 
-        _this._element.classList.add(CLASS_NAME_COLLAPSE);
-
-        _this._element.classList.add(CLASS_NAME_SHOW);
+        _this._element.classList.add(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
 
         _this._element.style[dimension] = '';
 
@@ -397,9 +395,7 @@
 
       this._element.classList.add(CLASS_NAME_COLLAPSING);
 
-      this._element.classList.remove(CLASS_NAME_COLLAPSE);
-
-      this._element.classList.remove(CLASS_NAME_SHOW);
+      this._element.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
 
       var triggerArrayLength = this._triggerArray.length;
 

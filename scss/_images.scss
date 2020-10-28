@@ -43,6 +43,7 @@ img {
         left: calc(var(--grid-gutter-x) / 2); // stylelint-disable-line function-blacklist;
         height: 100%;
         width: subtract(100%, var(--grid-gutter-x));
+        min-height: 1rem;
       }
     }
 

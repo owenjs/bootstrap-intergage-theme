@@ -37,6 +37,7 @@ $utilities: map-merge(
     ),
     "position": (
       property: position,
+      suffixClass: 'Yes', // For Checkbox Options in Templated Page Items
       values: static relative absolute fixed sticky
     ),
     "border": (
@@ -413,6 +414,7 @@ $utilities: map-merge(
       property: color,
       class: text-all,
       suffixSelectors: ('> *'),
+      suffixClass: 'Yes',
       values: map-merge(
         $theme-colors,
         (

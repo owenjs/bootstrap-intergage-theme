@@ -1279,7 +1279,7 @@ var Carousel = /*#__PURE__*/function () {
     this._element = element;
     this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
     this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
-    this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
+    this._pointerEvent = Boolean(window.PointerEvent);
 
     this._addEventListeners();
 
@@ -1642,12 +1642,9 @@ var Carousel = /*#__PURE__*/function () {
 
       var transitionDuration = getTransitionDurationFromElement(activeElement);
       EventHandler.one(activeElement, TRANSITION_END, function () {
-        nextElement.classList.remove(directionalClassName);
-        nextElement.classList.remove(orderClassName);
+        nextElement.classList.remove(directionalClassName, orderClassName);
         nextElement.classList.add(CLASS_NAME_ACTIVE$1);
-        activeElement.classList.remove(CLASS_NAME_ACTIVE$1);
-        activeElement.classList.remove(orderClassName);
-        activeElement.classList.remove(directionalClassName);
+        activeElement.classList.remove(CLASS_NAME_ACTIVE$1, orderClassName, directionalClassName);
         _this4._isSliding = false;
         setTimeout(function () {
           EventHandler.trigger(_this4._element, EVENT_SLID, {
@@ -1950,9 +1947,7 @@ var Collapse = /*#__PURE__*/function () {
     var complete = function complete() {
       _this._element.classList.remove(CLASS_NAME_COLLAPSING);
 
-      _this._element.classList.add(CLASS_NAME_COLLAPSE);
-
-      _this._element.classList.add(CLASS_NAME_SHOW);
+      _this._element.classList.add(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
 
       _this._element.style[dimension] = '';
 
@@ -1989,9 +1984,7 @@ var Collapse = /*#__PURE__*/function () {
 
     this._element.classList.add(CLASS_NAME_COLLAPSING);
 
-    this._element.classList.remove(CLASS_NAME_COLLAPSE);
-
-    this._element.classList.remove(CLASS_NAME_SHOW);
+    this._element.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
 
     var triggerArrayLength = this._triggerArray.length;
 
@@ -2743,7 +2736,6 @@ var EVENT_KEYDOWN_DISMISS = "keydown.dismiss" + EVENT_KEY$5;
 var EVENT_MOUSEUP_DISMISS = "mouseup.dismiss" + EVENT_KEY$5;
 var EVENT_MOUSEDOWN_DISMISS = "mousedown.dismiss" + EVENT_KEY$5;
 var EVENT_CLICK_DATA_API$5 = "click" + EVENT_KEY$5 + DATA_API_KEY$5;
-var CLASS_NAME_SCROLLABLE = 'modal-dialog-scrollable';
 var CLASS_NAME_SCROLLBAR_MEASURER = 'modal-scrollbar-measure';
 var CLASS_NAME_BACKDROP = 'modal-backdrop';
 var CLASS_NAME_OPEN = 'modal-open';
@@ -2930,10 +2922,10 @@ var Modal = /*#__PURE__*/function () {
 
     this._element.setAttribute('aria-modal', true);
 
-    if (this._dialog.classList.contains(CLASS_NAME_SCROLLABLE) && modalBody) {
+    this._element.scrollTop = 0;
+
+    if (modalBody) {
       modalBody.scrollTop = 0;
-    } else {
-      this._element.scrollTop = 0;
     }
 
     if (transition) {
@@ -3780,8 +3772,7 @@ var Tooltip = /*#__PURE__*/function () {
   _proto.setContent = function setContent() {
     var tip = this.getTipElement();
     this.setElementContent(SelectorEngine.findOne(SELECTOR_TOOLTIP_INNER, tip), this.getTitle());
-    tip.classList.remove(CLASS_NAME_FADE$1);
-    tip.classList.remove(CLASS_NAME_SHOW$3);
+    tip.classList.remove(CLASS_NAME_FADE$1, CLASS_NAME_SHOW$3);
   };
 
   _proto.setElementContent = function setElementContent(element, content) {
@@ -3801,7 +3792,7 @@ var Tooltip = /*#__PURE__*/function () {
           element.appendChild(content);
         }
       } else {
-        element.innerText = content.textContent;
+        element.textContent = content.textContent;
       }
 
       return;
@@ -3814,7 +3805,7 @@ var Tooltip = /*#__PURE__*/function () {
 
       element.innerHTML = content;
     } else {
-      element.innerText = content;
+      element.textContent = content;
     }
   };
 
@@ -4269,8 +4260,7 @@ var Popover = /*#__PURE__*/function (_Tooltip) {
     }
 
     this.setElementContent(SelectorEngine.findOne(SELECTOR_CONTENT, tip), content);
-    tip.classList.remove(CLASS_NAME_FADE$2);
-    tip.classList.remove(CLASS_NAME_SHOW$4);
+    tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$4);
   };
 
   _proto._addAttachmentClass = function _addAttachmentClass(attachment) {
